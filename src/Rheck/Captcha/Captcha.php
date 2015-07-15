@@ -70,6 +70,11 @@ class Captcha
     protected $numLines = 2;
 
     /**
+     * @var bool
+     */
+    protected $caseSensitive = false;
+
+    /**
      * @var CaptchaColor
      */
     protected $imageBgColor;
@@ -282,6 +287,23 @@ class Captcha
 
         imagedestroy($this->im);
         exit;
+    }
+
+    /**
+     * Method to check the stored code with the entered one.
+     *
+     * @param string $stored
+     * @param string $entered
+     * @return bool
+     */
+    public function checkCode($stored, $entered)
+    {
+        if (!$this->caseSensitive) {
+            $stored  = strtolower($stored);
+            $entered = strtolower($entered);
+        }
+
+        return $stored === $entered;
     }
 
     /**
