@@ -1,0 +1,25 @@
+{
+  "name": "rheck/captcha",
+  "type": "library",
+  "description": "Library to generate Captcha for Symfony2 PHP Framework",
+  "keywords": [
+    "captcha"
+  ],
+  "homepage": "http://github.com/rheck/captcha",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ricardo Heck",
+      "email": "bheck.ricardo@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "doctrine/orm": "~2.1"
+  },
+  "autoload": {
+    "psr-0": {
+      "Rheck\\Captcha": "src/"
+    }
+  }
+}
